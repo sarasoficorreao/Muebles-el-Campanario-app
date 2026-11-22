@@ -1,0 +1,6 @@
+{
+  "name": "Muebles El Campanario — Taller Visual",
+  "description": "Estudio visual gratuito para personalizar muebles con fotografías reales: cambia tonos de madera, tapizados y diseña espaldares en forja artesanal sin registro.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
