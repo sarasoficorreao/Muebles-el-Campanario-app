@@ -16,6 +16,8 @@ import {
 } from 'lucide-react';
 import { BeforeAfterSlider } from './components/BeforeAfterSlider';
 import { CameraModal } from './components/CameraModal';
+import { OfflineIndicator } from './components/OfflineIndicator';
+import { PWAInstallButton } from './components/PWAInstallButton';
 import {
   FORJA_PRESETS,
   QUICK_PROMPT_EXAMPLES,
@@ -421,9 +423,12 @@ export default function App() {
         {/* Intro Strip */}
         <section className="mb-6 flex flex-col gap-4 border-b border-stone-200/80 pb-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
-            <p className="text-xs font-medium tracking-wide text-[#9A6B32]">
-              Carpintería · Tapicería · Forja Artesanal
-            </p>
+            <div className="flex flex-wrap items-center gap-3">
+              <p className="text-xs font-medium tracking-wide text-[#9A6B32]">
+                Carpintería · Tapicería · Forja Artesanal
+              </p>
+              <PWAInstallButton />
+            </div>
             <h1 className="mt-1.5 font-serif text-3xl font-semibold leading-tight tracking-tight text-[#1C1917] sm:text-4xl">
               Visualiza cambios en tus muebles sobre fotografías reales
             </h1>
@@ -1016,6 +1021,8 @@ export default function App() {
         onCapture={handleCameraCapture}
         onFallbackFilePick={() => cameraFileInputRef.current?.click()}
       />
+
+      <OfflineIndicator />
     </div>
   );
 }

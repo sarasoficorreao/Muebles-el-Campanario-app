@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <rect width="512" height="512" rx="96" fill="#1C1917" />
+  <rect x="36" y="36" width="440" height="440" rx="72" stroke="#9A6B32" stroke-width="6" stroke-opacity="0.55" />
+  <!-- Architectural arch & classic chair silhouette for Muebles El Campanario -->
+  <path
+    d="M156 368V216C156 160.772 200.772 116 256 116C311.228 116 356 160.772 356 216V368"
+    stroke="#F8F7F4"
+    stroke-width="20"
+    stroke-linecap="round"
+  />
+  <path d="M132 296H380" stroke="#9A6B32" stroke-width="22" stroke-linecap="round" />
+  <path d="M188 296V384" stroke="#F8F7F4" stroke-width="18" stroke-linecap="round" />
+  <path d="M324 296V384" stroke="#F8F7F4" stroke-width="18" stroke-linecap="round" />
+  <path d="M214 174V296M256 154V296M298 174V296" stroke="#9A6B32" stroke-width="14" stroke-linecap="round" />
+</svg>
