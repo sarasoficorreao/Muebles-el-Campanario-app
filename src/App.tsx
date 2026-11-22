@@ -23,13 +23,14 @@ import {
   UPHOLSTERY_PRESETS,
   WOOD_PRESETS,
 } from './data/presets';
-import type { HistoryVariation, MaterialPreset, TransformResponse, WorkshopSpec } from './types';
+import type { HistoryVariation, MaterialPreset, WorkshopSpec } from './types';
 import {
   buildWorkshopSheetDataUrl,
   downloadDataUrl,
   shareDesignImage,
 } from './utils/imageExport';
 import { resizeImageInput } from './utils/imageResize';
+import { transformFurniture } from './utils/transformFurniture';
 
 const HISTORY_STORAGE_KEY = 'campanario_studio_history_v1';
 
@@ -176,26 +177,15 @@ export default function App() {
     setIsProcessing(true);
 
     try {
-      const response = await fetch('/api/transform', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          imageDataUrl: originalDataUrl,
-          prompt: prompt.trim() || effectivePrompt,
-          woodOption: selectedWood?.name,
-          upholsteryOption: selectedUpholstery?.name,
-          forjaOption: selectedForja?.name,
-          width: imageDims.width,
-          height: imageDims.height,
-        }),
+      const data = await transformFurniture({
+        imageDataUrl: originalDataUrl,
+        prompt: prompt.trim() || effectivePrompt,
+        woodOption: selectedWood?.name,
+        upholsteryOption: selectedUpholstery?.name,
+        forjaOption: selectedForja?.name,
+        width: imageDims.width,
+        height: imageDims.height,
       });
-
-      const data = (await response.json()) as TransformResponse & { error?: string };
-      if (!response.ok || !data.resultDataUrl) {
-        throw new Error(
-          data.error || 'No se pudo generar el diseño en este momento. Intenta de nuevo.'
-        );
-      }
 
       setResultDataUrl(data.resultDataUrl);
       setWorkshopSpec(data.workshopSpec);

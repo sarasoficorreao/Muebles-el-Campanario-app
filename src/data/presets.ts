@@ -1,11 +1,14 @@
 import type { MaterialPreset, SampleFurniture } from '../types';
+import sampleChairImg from '../assets/images/sample_wooden_chair_1795307917897.jpg';
+import sampleArmchairImg from '../assets/images/sample_armchair_1795307917819.jpg';
+import sampleBenchImg from '../assets/images/sample_bench_settee_1795307917934.jpg';
 
 export const SAMPLE_FURNITURE: SampleFurniture[] = [
   {
     id: 'silla-comedor-roble',
     title: 'Silla de Comedor Clásica',
     category: 'Comedor · Madera y Cojín',
-    imageUrl: '/src/assets/images/sample_wooden_chair_1795307917897.jpg',
+    imageUrl: sampleChairImg,
     suggestedPrompt:
       'Pasa el espaldar de madera a forja con un diseño de plantas sencillo y realista que lo pueda hacer alguien que sabe forja, cambia la madera a nogal oscuro y el tapizado a lino crudo.',
   },
@@ -13,7 +16,7 @@ export const SAMPLE_FURNITURE: SampleFurniture[] = [
     id: 'poltrona-nogal',
     title: 'Poltrona de Sala en Nogal',
     category: 'Sala · Brazos en Madera',
-    imageUrl: '/src/assets/images/sample_armchair_1795307917819.jpg',
+    imageUrl: sampleArmchairImg,
     suggestedPrompt:
       'Cambia la madera a roble miel claro y retapiza los cojines en cuero coñac envejecido manteniendo las costuras.',
   },
@@ -21,7 +24,7 @@ export const SAMPLE_FURNITURE: SampleFurniture[] = [
     id: 'banca-cedro',
     title: 'Banca Doble de Taller',
     category: 'Recibidor · Espaldar Listones',
-    imageUrl: '/src/assets/images/sample_bench_settee_1795307917934.jpg',
+    imageUrl: sampleBenchImg,
     suggestedPrompt:
       'Reemplaza el espaldar de listones de madera por forja artesanal negra mate con diseño de ramas y hojas sencillas, madera en cedro rojo y cojín en gris marengo.',
   },
